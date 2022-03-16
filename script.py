@@ -26,10 +26,9 @@ def main():
                         print("STOP your instances: " + str(instance_tostop_ids)) 
     if len(instance_tostop_ids) > 0:
         ec2.stop_instances(InstanceIds=instance_tostop_ids)
-        print("instance stop")
-    else:
+    if len(instance_tostart_ids) > 0:
       ec2.start_instances(InstanceIds=instance_tostart_ids)
-      print("instance start")
+     
                                  
 if __name__ == "__main__":
   main()  
